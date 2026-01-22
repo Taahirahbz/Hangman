@@ -1,7 +1,7 @@
 import random
 
 print ("Welcome to Taahirah's game. It is just a biology version of the Hangman you know!")
-print input("Press enter to continue")
+print (input("Press enter to continue"))
 name = (input("Kindly input your name: "))
 print ("Hello " + name + ", let's start the game. Kindly read the game rules below then press enter to continue.")
 print ("The Objective is guess the hidden word by suggesting letters before you run out of chances.")
