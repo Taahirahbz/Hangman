@@ -10,7 +10,7 @@ print ("2. If the letter is in the word, All matching positions are revealed, el
 print ("3. The player wins by guessing all letters in the word before attempts run out.")
 print ("4. The player loses if all allowed wrong guesses are used before the word is complete.")
 print ("5. All words are 6 letter and you will get only 3 hints")
-print input()
+print (input())
 
 
 # Load the dictionary from secret-word.txt
