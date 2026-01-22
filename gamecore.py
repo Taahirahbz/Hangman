@@ -14,7 +14,7 @@ print input()
 
 
 # Load the dictionary from secret-word.txt
-with open("secret-word.txt", "r") as file:
+with open("secret-words.txt", "r") as file:
     content = file.read()
     words_with_hints = eval(content)  # Converts string to dictionary
 
