@@ -12,27 +12,41 @@ print ("4. The player loses if all allowed wrong guesses are used before the wor
 print ("5. All words are 6 letter and you will get only 3 hints")
 print (input())
 
+class Hangman:
+    def __init__(self, word_file):
+        # Load words from file
+        with open(word_file, "r") as file:
+            content = file.read()
+            self.words_with_hints = eval(content)  # convert string to dictionary
 
-# Load the dictionary from secret-word.txt
-with open("secret-words.txt", "r") as file:
-    content = file.read()
-    words_with_hints = eval(content)  # Converts string to dictionary
+        # Pick a random word
+        self.secret_word = random.choice(list(self.words_with_hints.keys()))
 
-secret_word = random.choice(list(words_with_hints.keys()))
-print("SECRET WORD (for testing):", secret_word)                       #hashtag after launch
+        # Create display list
+        self.display = ["_"] * len(self.secret_word)
 
+        # Keep track of guessed letters
+        self.guessed_letters = []
 
-display = ["_"] * len(secret_word)
+    def show_progress(self):
+        # Print current progress
+        print(" ".join(self.display))
 
-print(" ".join(display))
+    def process_guess(self, guess):
+        # Update display for matching letters
+        for i in range(len(self.secret_word)):
+            if self.secret_word[i] == guess:
+                self.display[i] = guess
+        # Track guessed letters
+        self.guessed_letters.append(guess)
+        self.show_progress()
 
+game = HangmanGame("secret-words.txt")
+game.show_progress()
+
+# Example: one guess
 guess = input("Type a letter: ").lower()
-
-for i in range(len(secret_word)):
-    if secret_word[i] == guess:
-        display[i] = guess
-
-print(" ".join(display))
+game.process_guess(guess)
 
 
 
