@@ -60,7 +60,7 @@ class Hangman:
             print(f"Wrong guess! Total wrong guesses: {self.wrong_guesses}")
 
             # Show 3rd hint after 3 wrong guesses
-            if self.wrong_guesses == 3 and len(self.hints) > 3:
+            if self.wrong_guesses == 3 and len(self.hints) > 2:
                 print("Additional hint:", self.hints[2])
 
         self.show_progress()
