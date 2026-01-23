@@ -41,7 +41,7 @@ class Hangman:
         self.guessed_letters.append(guess)
         self.show_progress()
 
-game = HangmanGame("secret-words.txt")
+game = Hangman("secret-words.txt")
 game.show_progress()
 
 # Example: one guess
