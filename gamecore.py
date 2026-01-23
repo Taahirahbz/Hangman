@@ -22,6 +22,20 @@ secret_word = random.choice(list(words_with_hints.keys()))
 print("SECRET WORD (for testing):", secret_word)                       #hashtag after launch
 
 
+display = ["_"] * len(secret_word)
+
+print(" ".join(display))
+
+guess = input("Type a letter: ").lower()
+
+for i in range(len(secret_word)):
+    if secret_word[i] == guess:
+        display[i] = guess
+
+print(" ".join(display))
+
+
+
 
 
 
